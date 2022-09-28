@@ -243,15 +243,13 @@ syntax:70 bexp:70 "&&" bexp:71 : bexp
 syntax "(" bexp ")" : bexp
 
 -- Continuation
-declare_syntax_cat bcontelem
-declare_syntax_cat bcont
-syntax "|" aexp "]" : bcontelem
-syntax "|" bexp "]" : bcontelem
-syntax "&=" : bcontelem
-syntax "&<" : bcontelem
-syntax "&>" : bcontelem
-syntax "&OR" : bcontelem
-syntax "&AND" : bcontelem
-syntax bcontelem+ : bcont
+syntax "|" aexp "]" : contelem
+syntax "|" bexp "]" : contelem
+syntax "&=" : contelem
+syntax "&<" : contelem
+syntax "&>" : contelem
+syntax "&OR" : contelem
+syntax "&AND" : contelem
+syntax contelem+ : cont
 
-syntax "`[beval" bcont : term
+syntax "`[beval" cont : term
